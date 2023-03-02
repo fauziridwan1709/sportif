@@ -55,25 +55,11 @@ class _SportifAppState extends State<SportifApp> {
         if (data.size.height < 600) {
           textScaleFactor = 0.75;
         }
-        final screenHost = _ScreenHost(child: child);
         return MediaQuery(
           data: data.copyWith(textScaleFactor: textScaleFactor),
-          child: screenHost,
+          child: child,
         );
       },
     );
-  }
-}
-
-class _ScreenHost extends StatelessWidget {
-  const _ScreenHost({
-    Key? key,
-    this.child,
-  }) : super(key: key);
-  final Widget? child;
-
-  @override
-  Widget build(BuildContext context) {
-    return child ?? const SizedBox.shrink();
   }
 }
