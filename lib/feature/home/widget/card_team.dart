@@ -17,7 +17,10 @@ class CardTeam extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.all(SSpacing.space8),
+        padding: const EdgeInsets.symmetric(
+          horizontal: 16,
+          vertical: 10,
+        ),
         margin: const EdgeInsets.symmetric(horizontal: SSpacing.space18),
         decoration: BoxDecoration(
             color: Colors.white,
@@ -48,7 +51,7 @@ class CardTeam extends StatelessWidget {
                     text: team.strAlternate ?? '',
                     maxLines: 2,
                   ),
-                  const SizedBox(height: SSpacing.space2),
+                  const SizedBox(height: SSpacing.space4),
                   Row(
                     children: [
                       Container(
