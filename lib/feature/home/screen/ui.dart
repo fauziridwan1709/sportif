@@ -4,6 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:sportif/feature/home/blocs/team_bloc.dart';
+import 'package:sportif/feature/home/screen/route.dart';
+import 'package:sportif/feature/home/widget/card_team.dart';
+import 'package:sportif/feature/team_detail/screen/route.dart';
+import 'package:sportif/route/go_router/router.dart';
 
 import 'contract.dart';
 
@@ -24,7 +28,20 @@ class _HomeScreenState extends BaseStateful<HomeScreen> with HomeContract {
   }
 
   @override
-  PreferredSizeWidget? buildAppBar(BuildContext context) => null;
+  PreferredSizeWidget? buildAppBar(BuildContext context) => const PreferredSize(
+        preferredSize: Size.fromHeight(80),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: 20,
+              vertical: 16,
+            ),
+            child: SAText.h3(
+              text: 'Sportif',
+            ),
+          ),
+        ),
+      );
 
   @override
   ScaffoldAttribute buildAttribute() {
@@ -37,54 +54,25 @@ class _HomeScreenState extends BaseStateful<HomeScreen> with HomeContract {
   Widget buildNarrowLayout(BuildContext context, SizingInformation sizeInfo) {
     return BlocListener<TeamBloc, TeamStates>(
       listener: _teamBlocListener,
-      child: PagedListView<int, TeamResponse>(
+      child: PagedListView<int, TeamResponse>.separated(
         pagingController: pagingController,
+        separatorBuilder: (_, __) {
+          return const SizedBox(height: SSpacing.space8);
+        },
         builderDelegate: PagedChildBuilderDelegate(
-            itemBuilder: (BuildContext context, TeamResponse item, int index) {
-          return Container(
-            width: 260,
-            padding: EdgeInsets.all(SSpacing.space8),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Column(
-              children: [
-                SAText(text: 'Permiere League'),
-                SAText(text: 'Week 10'),
-                Row(
-                  children: [
-                    SANetworkImage(
-                      url: item.strTeamBadge,
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          SANetworkImage(
-                            url: 'https',
-                          ),
-                          SAText(text: 'Chelsea'),
-                          SAText(text: 'Home'),
-                        ],
-                      ),
-                    ),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          SANetworkImage(
-                            url: 'https',
-                          ),
-                          SAText(text: 'Man Utd'),
-                          SAText(text: 'Away'),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          );
-        }),
+          itemBuilder: (BuildContext context, TeamResponse item, int index) {
+            return CardTeam(
+              team: item,
+              onTap: () {
+                final route = TeamDetailRoute($extra: item);
+                goRouter.push(
+                  route.location,
+                  extra: route,
+                );
+              },
+            );
+          },
+        ),
       ),
     );
   }

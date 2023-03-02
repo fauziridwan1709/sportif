@@ -1,3 +1,4 @@
+import 'package:core/core.dart';
 import 'package:design/design.dart';
 import 'package:flutter/material.dart';
 
@@ -6,10 +7,10 @@ import 'contract.dart';
 class TeamDetailScreen extends StatefulWidget {
   const TeamDetailScreen({
     Key? key,
-    required this.id,
+    required this.team,
   }) : super(key: key);
 
-  final String id;
+  final TeamResponse team;
 
   @override
   _TeamDetailScreenState createState() => _TeamDetailScreenState();

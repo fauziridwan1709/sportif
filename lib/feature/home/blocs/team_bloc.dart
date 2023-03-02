@@ -24,7 +24,7 @@ class TeamBloc extends Bloc<TeamEvent, TeamStates> {
   ) async {
     emit(const TeamStates.loading());
     final englishPremiereLeague = 'English Premier League';
-    final germanBundesLeague = 'German%20Bundesliga';
+    final germanBundesLeague = 'German Bundesliga';
     final result = await _getAllTeamUseCase.execute(
       league:
           CoreConfig.isDevelopment ? englishPremiereLeague : germanBundesLeague,

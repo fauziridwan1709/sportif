@@ -7,23 +7,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:sportif/feature/team_detail/blocs/team_detail_bloc.dart';
 import 'package:sportif/feature/team_detail/screen/ui.dart';
-import 'package:sportif/route/app_routes.dart';
 
-part 'route.g.dart';
-
-@TypedGoRoute<TeamDetailRoute>(
-  path: AppRoutes.teamDetailScreen,
-)
 class TeamDetailRoute extends GoRouteData {
-  TeamDetailRoute({required this.id});
+  TeamDetailRoute({this.$extra});
 
-  final String id;
+  final TeamResponse? $extra;
   @override
   Page<void> buildPageWithState(BuildContext context, GoRouterState state) {
     return SMTransition(
       child: BlocProvider<TeamDetailBloc>(
         create: (context) => getIt<TeamDetailBloc>(),
-        child: TeamDetailScreen(id: id),
+        child: TeamDetailScreen(team: $extra!),
       ),
     );
   }

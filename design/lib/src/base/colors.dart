@@ -43,4 +43,6 @@ class SColors {
   static const Color sTextDarkDisabled = sGrey600;
 
   static const Color sWhite = Colors.white;
+  static const Color sOrange = Color(0xFFFF9628);
+  static const Color sPurple = Color(0xFF8869FF);
 }

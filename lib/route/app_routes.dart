@@ -3,5 +3,6 @@ class AppRoutes {
 
   /// Home
   static const String homeScreen = '/home';
-  static const String teamDetailScreen = '/home/team/:id';
+  static const String teamDetailScreen = '/home/team';
+  static const String teamDetailPath = 'team';
 }
