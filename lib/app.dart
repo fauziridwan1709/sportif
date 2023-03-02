@@ -57,7 +57,7 @@ class _SportifAppState extends State<SportifApp> {
         }
         return MediaQuery(
           data: data.copyWith(textScaleFactor: textScaleFactor),
-          child: child,
+          child: child ?? const SizedBox(),
         );
       },
     );
