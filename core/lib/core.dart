@@ -1,4 +1,4 @@
-library my_techanic_core;
+library core;
 
 export 'src/api/api.dart';
 export 'src/client/client.dart';

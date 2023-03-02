@@ -2,7 +2,7 @@ import 'package:design/design.dart';
 import 'package:flutter/material.dart';
 
 /// Implementation for app material theme.
-class DefaultMyTechanicThemeData implements AppTheme {
+class DefaultSportifThemeData implements AppTheme {
   // TODO(Any): Specify dark theme.
   @override
   ThemeData dark() {

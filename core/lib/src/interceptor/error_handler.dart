@@ -4,8 +4,6 @@ import 'package:core/core.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
-// import 'package:utils/utils.dart';
-// import 'package:my_techanic_design_system/my_techanic_design_system.dart';
 
 @injectable
 class ErrorHandlerInterceptor extends Interceptor {

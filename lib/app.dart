@@ -42,7 +42,7 @@ class _SportifAppState extends State<SportifApp> {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       key: _key,
-      title: 'My Techanic Super Apps',
+      title: 'Sportif App',
       routerConfig: goRouter,
       supportedLocales: supportedLocale,
       localizationsDelegates: const [

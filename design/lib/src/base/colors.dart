@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// My Techanic Colors
+// Sportif Colors
 class SColors {
   SColors._();
 
