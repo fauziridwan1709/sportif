@@ -15,7 +15,6 @@ class CoreConfig {
     await configureCoreDependencies();
   }
 
-  static bool get isPrototype => appFlavor == Flavor.prototype;
-  static bool get isStaging => appFlavor == Flavor.staging;
+  static bool get isDevelopment => appFlavor == Flavor.development;
   static bool get isProduction => appFlavor == Flavor.production;
 }

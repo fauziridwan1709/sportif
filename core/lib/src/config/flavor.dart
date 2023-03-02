@@ -1,20 +1,15 @@
 enum Flavor {
-  testing,
-  prototype,
-  staging,
+  development,
   production,
 }
 
-const prototype = 'prototype';
-const stg = 'staging';
+const dev = 'development';
 const prod = 'production';
 
 Flavor getFlavor(String appFlavor) {
   switch (appFlavor) {
-    case prototype:
-      return Flavor.prototype;
-    case stg:
-      return Flavor.staging;
+    case dev:
+      return Flavor.development;
     case prod:
       return Flavor.production;
   }

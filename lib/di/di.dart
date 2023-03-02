@@ -1,6 +1,6 @@
 // Package imports:
+import 'package:core/core.dart';
 import 'package:injectable/injectable.dart';
-import 'package:my_techanic_core/my_techanic_core.dart';
 
 // Project imports:
 import 'di.config.dart';

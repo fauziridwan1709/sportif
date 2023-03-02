@@ -32,6 +32,9 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   cupertino_icons: ^1.0.2
 
   # Navigation 2.0
@@ -51,6 +54,17 @@ dependencies:
   smooth_page_indicator: ^1.0.0+2
 
   shimmer: ^2.0.0
+
+  # Core package
+  core:
+    path: core
+
+  # Design system
+  design:
+    path: design
+
+  utils:
+    path: utils
 
 dev_dependencies:
   flutter_test:

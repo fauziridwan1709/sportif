@@ -12,14 +12,8 @@ class ApiDio extends DioForNative {
   }
 
   void _configureOptions() {
-    switch (CoreConfig.appFlavor ?? Flavor.prototype) {
-      case Flavor.testing:
-        options.baseUrl = Env.baseUrl;
-        break;
-      case Flavor.prototype:
-        options.baseUrl = Env.baseUrl;
-        break;
-      case Flavor.staging:
+    switch (CoreConfig.appFlavor ?? Flavor.development) {
+      case Flavor.development:
         options.baseUrl = Env.baseUrl;
         break;
       case Flavor.production:

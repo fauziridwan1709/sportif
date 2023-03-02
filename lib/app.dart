@@ -1,16 +1,13 @@
 // Dart imports:
 
 // Package imports:
-import 'package:country_code_picker/country_localizations.dart';
 // Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:my_techanic/constants/supported_locals.dart';
-import 'package:my_techanic/route/go_router/router.dart';
-import 'package:my_techanic_core/my_techanic_core.dart';
-import 'package:my_techanic_design_system/my_techanic_design_system.dart';
+import 'package:sportif/route/go_router/router.dart';
+
+import 'constants/supported_locals.dart';
 // Project imports:
 
 void launchApp() {
@@ -20,20 +17,20 @@ void launchApp() {
     ),
   );
   runApp(
-    const MyTechanicApp(),
+    const SportifApp(),
   );
 }
 
-class MyTechanicApp extends StatefulWidget {
-  const MyTechanicApp({
+class SportifApp extends StatefulWidget {
+  const SportifApp({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<StatefulWidget> createState() => _MyTechanicAppState();
+  State<StatefulWidget> createState() => _SportifAppState();
 }
 
-class _MyTechanicAppState extends State<MyTechanicApp> {
+class _SportifAppState extends State<SportifApp> {
   final UniqueKey _key = UniqueKey();
 
   @override
@@ -48,9 +45,7 @@ class _MyTechanicAppState extends State<MyTechanicApp> {
       title: 'My Techanic Super Apps',
       routerConfig: goRouter,
       supportedLocales: supportedLocale,
-      theme: DefaultMyTechanicThemeData().light(),
       localizationsDelegates: const [
-        CountryLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
@@ -80,24 +75,5 @@ class _ScreenHost extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return child ?? const SizedBox.shrink();
-  }
-}
-
-typedef SessionBuilder = Widget Function(SessionState session);
-
-class SessionWrapper extends StatelessWidget {
-  const SessionWrapper({Key? key, required this.sessionBuilder})
-      : super(key: key);
-
-  final SessionBuilder sessionBuilder;
-
-  @override
-  Widget build(BuildContext context) {
-    return BlocBuilder<SessionCubit, SessionState>(
-      bloc: getIt<SessionCubit>(),
-      builder: (context, state) {
-        return sessionBuilder.call(state);
-      },
-    );
   }
 }

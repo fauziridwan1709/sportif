@@ -35,7 +35,7 @@ class _SoccerApi implements SoccerApi {
       method: 'GET',
       baseUrl: baseUrl ?? _dio.options.baseUrl,
       queryParameters: queryParameters,
-      path: '/json/3/search_all_teams.php',
+      path: '/v1/json/3/search_all_teams.php',
     )..data = _data);
     final value = AllTeamResponse.fromJson(_result.data!);
     return value;
