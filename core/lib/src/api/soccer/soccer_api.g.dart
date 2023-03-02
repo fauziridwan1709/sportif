@@ -24,7 +24,7 @@ class _SoccerApi implements SoccerApi {
     required options,
   }) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'l': l};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final newOptions = newRequestOptions(options);

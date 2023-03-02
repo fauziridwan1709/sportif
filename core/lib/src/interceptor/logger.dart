@@ -3,7 +3,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
-// import 'package:utils/utils.dart';
+import 'package:utils/utils.dart';
 
 /// copied from https://pub.dev/packages/pretty_dio_logger
 /// at version 1.2.0-beta-1
@@ -57,7 +57,7 @@ class LoggerInterceptor extends Interceptor {
     if (kReleaseMode) {
       super.onRequest(options, handler);
     } else {
-      // AppLogger.i(options.data);
+      AppLogger.i(options.data);
       super.onRequest(options, handler);
     }
   }
@@ -68,14 +68,14 @@ class LoggerInterceptor extends Interceptor {
     if (kReleaseMode) {
       super.onError(err, handler);
     } else {
-//       AppLogger.e({
-//         'api': '''
-// ${err.response?.statusCode ?? 0}: ${err.requestOptions.baseUrl}${err.requestOptions.path}''',
-//         'headers': err.requestOptions.headers,
-//         'queryParams': err.requestOptions.queryParameters,
-//         'body': err.requestOptions.data,
-//         'response': err.response?.data
-//       });
+      AppLogger.e({
+        'api': '''
+${err.response?.statusCode ?? 0}: ${err.requestOptions.baseUrl}${err.requestOptions.path}''',
+        'headers': err.requestOptions.headers,
+        'queryParams': err.requestOptions.queryParameters,
+        'body': err.requestOptions.data,
+        'response': err.response?.data
+      });
       super.onError(err, handler);
     }
   }
@@ -90,15 +90,15 @@ class LoggerInterceptor extends Interceptor {
     } else {
       final isResponseTypeBytes =
           response.requestOptions.responseType == ResponseType.bytes;
-//       AppLogger.i({
-//         'api': '''
-// ${response.statusCode}: ${response.requestOptions.baseUrl}${response.requestOptions.path}''',
-//         'authorization': response.requestOptions.headers['Authorization'],
-//         'headers': response.requestOptions.headers,
-//         'queryParams': response.requestOptions.queryParameters,
-//         'body': response.requestOptions.data,
-//         'response': isResponseTypeBytes ? null : response.data,
-//       });
+      AppLogger.i({
+        'api': '''
+${response.statusCode}: ${response.requestOptions.baseUrl}${response.requestOptions.path}''',
+        'authorization': response.requestOptions.headers['Authorization'],
+        'headers': response.requestOptions.headers,
+        'queryParams': response.requestOptions.queryParameters,
+        'body': response.requestOptions.data,
+        'response': isResponseTypeBytes ? null : response.data,
+      });
       super.onResponse(response, handler);
     }
   }

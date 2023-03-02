@@ -1,6 +1,6 @@
 import 'package:core/core.dart';
 import 'package:dio/dio.dart';
-// import 'package:utils/utils.dart';
+import 'package:utils/utils.dart';
 
 abstract class Failure implements Exception {
   Failure({
@@ -70,7 +70,7 @@ class DioFailure implements Exception {
         errorMessage = res!.data['message'].toString();
       }
     } catch (e) {
-      // AppLogger.e(e.toString());
+      AppLogger.e(e.toString());
     }
 
     return errorMessage;

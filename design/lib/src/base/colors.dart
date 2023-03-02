@@ -8,6 +8,7 @@ class SColors {
   ///Primary
   //Normal
   static const Color sPrimary = Color(0xFF1064BC);
+  static const Color sPrimaryLighter = Color(0xFFCFE0F2);
 
   /// Grey ///
   static const Color sGrey100 = Color(0xFFF9FAFB);

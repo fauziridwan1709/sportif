@@ -1,8 +1,8 @@
 import 'package:design/design.dart';
 import 'package:flutter/material.dart';
 
-class SScaffold extends Scaffold {
-  SScaffold({
+class SMScaffold extends Scaffold {
+  SMScaffold({
     ScaffoldAttribute? attr,
     PreferredSizeWidget? appBar,
     Widget? body,

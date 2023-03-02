@@ -41,7 +41,7 @@ abstract class BaseStateful<T extends StatefulWidget> extends State<T>
     );
     // should check whether scaffold need to remove or not
     if (!scaffoldAttribute.removeScaffold) {
-      child = SScaffold(
+      child = SMScaffold(
         attr: scaffoldAttribute,
         body: child,
         appBar: buildAppBar(context),

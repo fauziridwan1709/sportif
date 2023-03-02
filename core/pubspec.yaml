@@ -42,6 +42,9 @@ dependencies:
   # A cleaner way to handle your environment variables.
   envied: ^0.3.0
 
+  utils:
+    path: ../utils
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

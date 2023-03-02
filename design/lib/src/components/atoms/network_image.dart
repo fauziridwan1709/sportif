@@ -2,8 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:design/design.dart';
 import 'package:flutter/material.dart';
 
-class MTANetworkImage extends StatelessWidget {
-  const MTANetworkImage({
+class SANetworkImage extends StatelessWidget {
+  const SANetworkImage({
     Key? key,
     this.url,
     this.placeHolder,

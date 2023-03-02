@@ -1,7 +1,7 @@
 import 'package:design/src/base/colors.dart';
 import 'package:flutter/material.dart';
 
-class MSText extends StatelessWidget {
+class SAText extends StatelessWidget {
   final String text;
   final double? fontSize;
   final double? letterSpacing;
@@ -12,7 +12,7 @@ class MSText extends StatelessWidget {
   final int? maxLines;
   final TextOverflow? overflow;
 
-  const MSText({
+  const SAText({
     Key? key,
     required this.text,
     this.fontSize,

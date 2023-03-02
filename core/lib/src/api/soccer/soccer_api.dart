@@ -13,7 +13,7 @@ abstract class SoccerApi {
   // API GET Get Transaction Invoice
   @GET('/v1/json/3/search_all_teams.php')
   Future<AllTeamResponse> getAllTeam({
-    @Path('id') required String l,
+    @Query('l') required String l,
     @DioOptions() required Options options,
   });
 }

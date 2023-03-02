@@ -6,8 +6,8 @@ enum SkeletonType {
   circle,
 }
 
-class MSSkeleton extends StatelessWidget {
-  const MSSkeleton({
+class SASkeleton extends StatelessWidget {
+  const SASkeleton({
     Key? key,
     required this.width,
     required this.height,

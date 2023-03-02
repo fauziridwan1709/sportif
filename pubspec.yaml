@@ -55,6 +55,8 @@ dependencies:
 
   shimmer: ^2.0.0
 
+  flutter_bloc: ^8.0.0
+
   # Core package
   core:
     path: core
