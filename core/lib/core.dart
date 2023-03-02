@@ -1,7 +1,9 @@
-library core;
+library my_techanic_core;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/api/api.dart';
+export 'src/client/client.dart';
+export 'src/config/config.dart';
+export 'src/constants/constants.dart';
+export 'src/di/core_di.dart';
+export 'src/errors/failures.dart';
+export 'src/interceptor/interceptor.dart';
