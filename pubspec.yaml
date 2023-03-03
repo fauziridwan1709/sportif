@@ -32,21 +32,63 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
 
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  # Navigation 2.0
+  go_router: ^5.1.2
+
+  # Concurrency on BLoC.
+  bloc_concurrency: ^0.2.0
+
+  # convenient code generator for get_it.
+  injectable: ^1.5.3
+
+  # Lazy loads.
+  infinite_scroll_pagination: ^3.2.0
+
+  # Carousel
+  carousel_slider: ^4.1.1
+  smooth_page_indicator: ^1.0.0+2
+
+  shimmer: ^2.0.0
+
+  flutter_bloc: ^8.0.0
+
+  # Core package
+  core:
+    path: core
+
+  # Design system
+  design:
+    path: design
+
+  utils:
+    path: utils
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
-  flutter_lints: ^2.0.0
+  build_runner: ^2.3.2
+  intl_generator: ^0.3.0
+  json_serializable: ^6.1.1
+  very_good_analysis: ^3.0.1
+  injectable_generator: any
+  freezed: ^2.1.0+1
+
+  # builder for go router
+  go_router_builder: ^1.0.15
+
+  # asset images or icon generator
+  flutter_gen_core: ^5.1.0+1
+  flutter_gen_runner: ^5.1.0+1
+
+  # import sorter
+  #  flutter pub run import_sorter:main
+  import_sorter: ^4.6.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -75,17 +117,26 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
-  #       - asset: fonts/TrajanPro_Bold.ttf
-  #         weight: 700
-  #
-  # For details regarding fonts from package dependencies,
-  # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+    - assets/fonts/
+
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Black.ttf
+        - asset: assets/fonts/Poppins-BlackItalic.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+        - asset: assets/fonts/Poppins-BoldItalic.ttf
+        - asset: assets/fonts/Poppins-ExtraBold.ttf
+        - asset: assets/fonts/Poppins-ExtraBoldItalic.ttf
+        - asset: assets/fonts/Poppins-ExtraLight.ttf
+        - asset: assets/fonts/Poppins-Italic.ttf
+        - asset: assets/fonts/Poppins-Light.ttf
+        - asset: assets/fonts/Poppins-LightItalic.ttf
+        - asset: assets/fonts/Poppins-Medium.ttf
+        - asset: assets/fonts/Poppins-MediumItalic.ttf
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-SemiBold.ttf
+        - asset: assets/fonts/Poppins-Thin.ttf
+        - asset: assets/fonts/Poppins-ThinItalic.ttf

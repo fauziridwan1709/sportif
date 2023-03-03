@@ -11,10 +11,64 @@ dependencies:
   flutter:
     sdk: flutter
 
+  dartz: ^0.10.1
+
+  # Json Annotation.
+  json_annotation: ^4.0.1
+
+  # Api client.
+  dio: ^4.0.0
+
+  # Api Contract.
+  retrofit: ^3.0.0
+
+  # Equatability between objects.
+  equatable: ^2.0.0
+
+  # Local database.
+  hive: ^2.2.2
+  hive_flutter: ^1.1.0
+
+  # Package information.
+  package_info_plus: ^1.4.2
+
+  # Dio interceptor.
+  dio_smart_retry: ^1.0.0
+  dio_cache_interceptor: ^3.3.0
+
+  # convenient code generator for get_it.
+  injectable: ^1.5.3
+
+  # A cleaner way to handle your environment variables.
+  envied: ^0.3.0
+
+  utils:
+    path: ../utils
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+
+  # Very good linter. please make linter happy :).
+  very_good_analysis: ^3.0.1
+
+  # Dependency Injection.
+  injectable_generator: any
+
+  # Runner.
+  build_runner: ^2.3.2
+
+  # Po
+  freezed: ^2.1.0+1
+
+  # Generator for json annotation.
+  json_serializable: ^6.3.1
+
+  # Generator for retrofit.
+  retrofit_generator: ^4.0.3+1
+
+  # Generator for envied.
+  envied_generator: ^0.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
